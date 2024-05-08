@@ -33,3 +33,6 @@ const Characters = 'The Heeler Family', Dad = 'Bandit', Mum = 'Chilli', Eldest =
 document.write(Eldest);
 
 
+document.write('<br>');
+
+document.write(20+7);
