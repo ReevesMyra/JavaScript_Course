@@ -36,3 +36,20 @@ document.write(Eldest);
 document.write('<br>');
 
 document.write(20+7);
+
+
+
+
+function My_First_Function() {                                  // Defines a funtion and names it
+    let string = 'Huzzah! This is the magic button text!';                    // Defines a variable and gives it a string value
+    document. getElementById("Button_Text").innerHTML = string; // Puts the value of the variable into the HTML elementFromPoint with the "Button_Text" id
+}
+
+
+
+
+let Sent1 = '<br><br> This is the beginning of a string';
+let Sent2 = ' and this is the end of that string.';
+
+
+document.write(Sent1, Sent2);
