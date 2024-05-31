@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+			<h2>Get The Latest Content:</h2>
+			<div class='content' id="content">
+				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
+			</div>
+		<script type="text/javascript">
+
+            // STEP 1:  Create the XML HTTP request object -- XMLHttpRequest();
+            var ajaxVariable = new XMLHttpRequest();
+
+            // STEP 2:  Prepare the open ajax request.  Call on the AJAX Open();   It requires 2 parameters.  First is either a GET method (for unsecure public receiving of information back from the server) or a POST method (to securely, privately send information to the server).  The second parameter is the address of the data.
+            ajaxVariable.open('GET', 'content.html');
+
+            // STEP 3:  Define the AJAX response Callback method.  That way the server knows what to do once it recieves the information or responds with info.
+            // A ready state of 4 means that the server has successfully parsed data, sent it to us, and is now waiting for a new request from us.
+            ajaxVariable.onreadystatechange = function() {
+                if (ajaxVariable.readyState == 4) {
+                    document.getElementById('content').innerHTML = ajaxVariable.responseText;
+                }
+            }
+
+            // STEP 4:  Send the ajax request for data.  Call on the AJAX Send();
+            // On line 12 above, we already set the DOM trigger event to be upon clicking the "Get Content" button on the page.  So next we need to define that specified function mentioend on line 12.
+            function getContent() {
+                ajaxVariable.send();
+
+                // To hide the "Get Content" button after pressing on it:
+                document.getElementById('btn_content').style.display = 'none';
+            }
+
+		</script>
+    </body>
+</html>
