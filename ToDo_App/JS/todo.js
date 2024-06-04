@@ -21,7 +21,7 @@ function get_todos() {
 function addTask() {
 
     // Take the inputed task and create a variable from it's value:
-    let task = document.getElementById('task').ariaValueMax;
+    let task = document.getElementById('task').value;
 
     let todos = get_todos();
 
